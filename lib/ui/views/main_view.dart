@@ -4,6 +4,7 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 import 'package:provider_start/core/localization/localization.dart';
 import 'package:provider_start/core/view_models/main_view_model.dart';
+import 'package:provider_start/ui/views/experiments_view.dart';
 import 'package:provider_start/ui/views/home_view.dart';
 import 'package:provider_start/ui/views/settings_view.dart';
 
@@ -23,6 +24,7 @@ class MainView extends StatelessWidget {
           children: <Widget>[
             HomeView(),
             SettingsView(),
+            ExperimentsView(),
           ],
         ),
         bottomNavBar: PlatformNavBar(
@@ -44,10 +46,10 @@ class MainView extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: PlatformWidget(
-                android: (_) => Icon(Icons.settings),
-                ios: (_) => Icon(CupertinoIcons.settings),
+                android: (_) => Icon(Icons.list),
+                ios: (_) => Icon(Icons.list),
               ),
-              title: Text(local.settingsViewTitle),
+              title: Text(local.experimentsViewTitle),
             ),
           ],
           itemChanged: model.changeTab,
