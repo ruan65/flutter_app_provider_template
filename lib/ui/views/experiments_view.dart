@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 import 'package:provider_start/core/view_models/experiments_view_model.dart';
+import 'package:provider_start/ui/views/experiments/show_image_view.dart';
 
 import '../../core/localization/localization.dart';
 
@@ -25,6 +26,8 @@ class ExperimentsView extends StatelessWidget {
 }
 
 class _ExperimentsList extends ProviderWidget<ExperimentsViewModel> {
+
+
   @override
   Widget build(BuildContext context, ExperimentsViewModel model) {
     return Container(
@@ -34,6 +37,8 @@ class _ExperimentsList extends ProviderWidget<ExperimentsViewModel> {
             child: Text('Image Loader'),
             onPressed: () {
               print('tapped....');
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ShowImageView()));
             },
           )
         ],
